@@ -10,9 +10,14 @@
 
 package net.sidland.message.dao;
 
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import net.sidland.kafka.utils.PullUtils;
+import net.sidland.kafka.utils.PushUtils;
 
 /**
  * ClassName:Kafka
@@ -27,22 +32,17 @@ public class KafkaDao implements MessageDao {
 	protected static Logger logger = LoggerFactory.getLogger(KafkaDao.class);
 
 	@Override
-	public void push(String msg) {
+	public void push(String msgId,String msg) {
 		logger.debug("Kafka push start");
 
-		// TODO Auto-generated method stub
+		PushUtils.sendMsg(msgId, UUID.randomUUID().toString(), msg);
 
 		logger.debug("Kafka push end");
 	}
 
 	@Override
-	public String pull(String msgId) {
-		logger.debug("Kafka pull start");
-
-		// TODO Auto-generated method stub
-
-		logger.debug("Kafka pull end");
-		return null;
+	public String pull(String groupid,String msgId) {
+		return PullUtils.pullMsg(groupid, msgId);
 	}
 
 }

@@ -18,7 +18,7 @@ package net.sidland.message.dao;
  */
 public interface MessageDao {
 
-	public void push(String msg);
-	public String pull(String msgId);
+	public void push(String msgId,String msg);
+	public String pull(String groupid,String msgId);
 }
 

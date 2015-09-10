@@ -28,11 +28,11 @@ public class MessageService {
 	@Autowired
 	private KafkaDao msgDao;
 	
-	public void push(String msg){
-		msgDao.push(msg);
+	public void push(String msgId,String msg){
+		msgDao.push(msgId,msg);
 	}
 	
-	public String pull(String msgId){
-		return msgDao.pull(msgId);
+	public String pull(String groupid,String msgId){
+		return msgDao.pull(groupid,msgId);
 	}
 }

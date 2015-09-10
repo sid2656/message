@@ -16,7 +16,7 @@ public class InitKafka {
 	/**
 	 * 配置文件地址
 	 */
-	private static final String charset="utf-8";
-	public static final Properties productor = PropertiesUtil.getProperties("dev/productor.properties", charset);
-	public static final Properties consumer = PropertiesUtil.getProperties("dev/consumer.properties", charset);
+	public static final String charset="utf-8";
+	public static final Properties productor = PropertiesUtil.getProperties("productor.properties", charset);
+	public static final Properties consumer = PropertiesUtil.getProperties("consumer.properties", charset);
 }

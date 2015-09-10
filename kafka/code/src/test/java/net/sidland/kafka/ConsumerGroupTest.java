@@ -77,7 +77,7 @@ public class ConsumerGroupTest {
     }  
    
     public static void main(String[] args) {
-    	ConsumerGroupTest example = new ConsumerGroupTest("test6", "page_visits");  
+    	ConsumerGroupTest example = new ConsumerGroupTest("test6", "topic1");  
         example.run(5);  
         try {  
             Thread.sleep(10000);  

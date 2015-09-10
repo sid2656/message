@@ -42,18 +42,17 @@ public class MessageController {
 	public String push(HttpServletRequest request,HttpServletResponse response){
 		logger.debug("controller push star");
 		String id = ServletRequestUtils.getStringParameter(request, "id","哈哈");
-		msgService.push(id);
+		String msg = ServletRequestUtils.getStringParameter(request, "msg","哈哈");
+		msgService.push(id,msg);
 		logger.debug("controller push end");
 		return id;
 	}
 	
 	@RequestMapping(value="/pull")
 	public String pull(HttpServletRequest request,HttpServletResponse response){
-		logger.debug("controller pull star");
-		String id = ServletRequestUtils.getStringParameter(request, "id","哈哈");
-		msgService.pull(id);
-		logger.debug("controller pull end");
-		return id;
+		String groupid = ServletRequestUtils.getStringParameter(request, "groupid","哈哈");
+		String msgId = ServletRequestUtils.getStringParameter(request, "msgId","哈哈");
+		return msgService.pull(groupid,msgId);
 	}
 }
 
