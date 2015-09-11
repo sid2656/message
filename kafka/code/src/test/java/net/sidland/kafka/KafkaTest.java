@@ -50,7 +50,7 @@ public class KafkaTest extends TestCase {
 	}
 	
 	public void pullMsgTest(){
-		PullUtils.pullMsg("groupid1", "topic2");
+		PullUtils.pullMsg("groupid1", "topic");
 	}
 	
 	public void producerTest(){
